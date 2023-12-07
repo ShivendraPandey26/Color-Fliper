@@ -1,142 +1,150 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-        * {
-            padding: 0;
-            margin: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'poppins', sans-serif;
-        }
+      * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      }
+      body {
+        font-family: "poppins", sans-serif;
+      }
 
-        #container {
-            width: 100vw;
-            height: 100vh;
-            background: #f1f5f8;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-        }
+      #container {
+        width: 100vw;
+        height: 100vh;
+        background: #f1f5f8;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
 
-        h1 {
-            width: auto;
-            height: auto;
-            background: #000;
-            color: #fff;
-            padding: 20px;
-            border-radius: 5px;
-            margin-bottom: 30px;
-        }
-        span {
-            color: red;
-        }
+      h1 {
+        width: auto;
+        height: auto;
+        background: #000;
+        color: #fff;
+        padding: 20px;
+        border-radius: 5px;
+        margin-bottom: 30px;
+      }
+      span {
+        color: red;
+      }
 
-        button {
-            width: 150px;
-            height: auto;
-            padding: 10px;
-            background-color: transparent;
-            border: 2px solid black;
-            border-radius: 5px;
-            font-size: 1.3rem;
-            font-weight: 500;
-            cursor: pointer;
-        }
+      button {
+        width: 150px;
+        height: auto;
+        padding: 10px;
+        background-color: transparent;
+        border: 2px solid black;
+        border-radius: 5px;
+        font-size: 1.3rem;
+        font-weight: 500;
+        cursor: pointer;
+      }
 
-        button:hover {
-            background: #000;
-            color: #fff ;
-        }
+      button:hover {
+        background: #000;
+        color: #fff;
+      }
 
-        .header {
-            width: 100vw;
-            height: 70px;
-            background: #fff;
-            display: flex;
-            justify-content: space-evenly;
-            position: fixed;
-            box-shadow: 0 8px 8px rgba(0, 0, 0, 0.4);
-        }
+      .header {
+        width: 100vw;
+        height: 70px;
+        background: #fff;
+        display: flex;
+        justify-content: space-evenly;
+        position: fixed;
+        box-shadow: 0 8px 8px rgba(0, 0, 0, 0.4);
+      }
 
-        .header h2 {
-            margin-top: 5px;
-            color: #0091ff;
-        }
+      .header h2 {
+        margin-top: 5px;
+        color: #0091ff;
+      }
 
-        #p{
-            display: flex;
-            gap: 20px;
-            margin: auto 0 auto;
-        }
+      #p {
+        display: flex;
+        gap: 20px;
+        margin: auto 0 auto;
+      }
 
-        #p a {
-            cursor: pointer;
-            text-decoration: none;
-            color: #000;
-        }
-        
-        #p a:hover {
-            color: #0091ff;
-        }
+      #p a {
+        cursor: pointer;
+        text-decoration: none;
+        color: #000;
+      }
 
-
+      #p a:hover {
+        color: #0091ff;
+      }
     </style>
-
-</head>
-<body>
-
+  </head>
+  <body>
     <div class="header">
-        <h2>
-            Color <br />
-            Fl!pper
-          </h2>
+      <h2>
+        Color <br />
+        Fl!pper
+      </h2>
 
-        <div id="p">  
-            <a href="simple.html">Simple</a>
-            <a href="hax.html">Hex</a>
-            <a onclick="whiteBG()">White Background</a>
-        </div>
+      <div id="p">
+        <a href="simple.html">Simple</a>
+        <a href="hax.html">Hex</a>
+        <a onclick="whiteBG()">White Background</a>
+      </div>
     </div>
 
-    <div id="container"> 
-        
-        <h1>
-            Background Color : <span id="color">White Background</span>
-        </h1>
-        
-        <button onclick="haxColor()">Click Here</button>
+    <div id="container">
+      <h1>Background Color : <span id="color">White Background</span></h1>
 
+      <button onclick="haxColor()">Click Here</button>
     </div>
 
     <script>
+      function whiteBG() {
+        document.getElementById("container").style.background = "#f1f5f8";
+        document.getElementById("color").innerHTML = "#f1f5f8";
+      }
 
-        function whiteBG() {
-            document.getElementById('container').style.background = "#f1f5f8";
-            document.getElementById('color').innerHTML = "#f1f5f8";
+      function haxColor() {
+        const arr = [
+          0,
+          1,
+          2,
+          3,
+          4,
+          5,
+          6,
+          7,
+          8,
+          9,
+          "A",
+          "B",
+          "C",
+          "D",
+          "E",
+          "F",
+        ];
+        console.log(arr.length);
+
+        let colorName = "#";
+        for (let index = 0; index < 6; index++) {
+          colorName += arr[randomNo()];
         }
-             
-    function haxColor() {
-
-    const arr = [0,1,2,3,4,5,6,7,8,9,"A","B","C","D","E","F"];
-    console.log(arr.length)
-
-    let colorName = "#"
-    for (let index = 0; index < 6; index++) {
-    colorName += arr[randomNo()]
-    }
-    // console.log(colorName);
-    document.getElementById('container').style.background = colorName;
-    document.getElementById('color').innerHTML = colorName;
-
-    }
-    function randomNo() {
-    return  Math.floor(Math.random() * 16);
-    // console.log(n);              
-    }
+        // console.log(colorName);
+        document.getElementById("container").style.background = colorName;
+        document.getElementById("color").innerHTML = colorName;
+      }
+      function randomNo() {
+        return Math.floor(Math.random() * 16);
+        // console.log(n);
+      }
     </script>
+  </body>
+</html>
